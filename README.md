@@ -120,8 +120,8 @@ GET http://localhost:8080/api/v1/classify-number/371
 If an invalid number is provided, the API returns a **400 Bad Request**:
 ```json
 {
-  "error": true,
-  "message": "Number is required!"
+   "number": "alphabet",
+   "error": true,
 }
 ```
 
@@ -130,7 +130,7 @@ If an invalid number is provided, the API returns a **400 Bad Request**:
 1. Fork this repository.
 2. Clone your forked repo:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/number-classification-api.git
+   git clone https://github.com/Blard-omu/hng12-stage-1.git
    ```
 3. Create a new branch:
    ```bash
