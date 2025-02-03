@@ -1,15 +1,42 @@
-# HNG12 Stage 0 API 🚀
+# Number Classification API 🚀
 
-This is a simple Node.js API built with TypeScript and Express for HNG12 Stage 0.
+This is a Node.js API built with TypeScript and Express for classifying numbers based on various mathematical properties.
 
 ---
-<img src="https://res.cloudinary.com/djkrhjgjd/image/upload/v1738263814/Screenshot_31_vpmadb.png" alt="postman" />
 
-## Features ✨
-- Returns email, current date, and GitHub URL
+## Key Features ✨
+- Determines if a number is **prime, perfect, Armstrong, even, or odd**
+- Calculates the **sum of the digits** of the number
+- Fetches a **fun fact** about the number from the Numbers API
 - Uses TypeScript for type safety
 - Supports API versioning (`/api/v1`)
-- Environment variables for easy configuration
+- Implements error handling and validation
+
+---
+
+
+---
+
+## 📖 Mathematical Concepts Behind the Classifications
+
+### **Prime Number**
+A **prime number** is a number greater than 1 that has exactly two divisors: 1 and itself. This means it cannot be divided evenly by any other number.
+- Examples: **2, 3, 5, 7, 11, 13, ...**
+- The function checks divisibility by iterating from 2 to `sqrt(n)`, as factors appear in pairs.
+
+### **Perfect Number**
+A **perfect number** is a number that is equal to the sum of its proper divisors (excluding itself).
+- Examples: **6, 28, 496, 8128**
+- For instance, 6 has divisors **1, 2, 3** → `1 + 2 + 3 = 6`, so it's a perfect number.
+
+### **Armstrong Number (Narcissistic Number)**
+An **Armstrong number** (or narcissistic number) is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+- Examples: **153, 370, 371, 407**
+- For instance, 371:
+  
+  \[ 3^3 + 7^3 + 1^3 = 27 + 343 + 1 = 371 \]
+  
+  Since the sum equals the original number, 371 is an Armstrong number.
 
 ---
 
@@ -17,8 +44,8 @@ This is a simple Node.js API built with TypeScript and Express for HNG12 Stage 0
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/Blard-omu/hng12-stage-0
-cd hng12-stage-0
+git clone https://github.com/YOUR-USERNAME/number-classification-api.git
+cd number-classification-api
 ```
 
 ### 2️⃣ Install Dependencies
@@ -34,9 +61,7 @@ npm install
 ### 3️⃣ Configure Environment Variables
 Create a `.env` file in the root folder and add:
 ```ini
-EMAIL=myname@email.com
-GITHUB_URL=https://github.com/YOUR-USERNAME/hng12-stage-0
-PORT=3000
+PORT=8080
 ```
 
 ### 4️⃣ Run the API
@@ -65,29 +90,47 @@ npm run build && npm start
 
 ### **Base URL:**  
 ```
-local: http://localhost:3000/api/v1
-production: https://chemical-sidoney-blard-31b85c0a.koyeb.app/api/v1
+local: http://localhost:8080/api/v1/classify-number
 ```
-### Backlink
-- Node.js: https://hng.tech/hire/nodejs-developers
+```
+production: https://olympic-guenna-blard-02d32c23.koyeb.app/api/v1/classify-number
+```
 
-### **Example Response:**
+### **Endpoints**
+#### ➤ Classify a Number
+**GET** `/api/v1/classify-number/:number`
+
+##### **Example Request:**
+```
+GET http://localhost:8080/api/v1/classify-number/371
+```
+##### **Example Response:**
 ```json
 {
-  "email_address": "myname@email.com",
-  "current_datetime": "2023-10-25T14:30:45.123Z",
-  "github_url": "https://github.com/YOUR-USERNAME/hng12-stage-0"
+  "number": 371,
+  "is_prime": false,
+  "is_perfect": false,
+  "properties": ["armstrong", "odd"],
+  "digit_sum": 11,
+  "fun_fact": "371 is an Armstrong number because 3^3 + 7^3 + 1^3 = 371"
 }
 ```
 
----
+#### ➤ Error Handling
+If an invalid number is provided, the API returns a **400 Bad Request**:
+```json
+{
+  "error": true,
+  "message": "Number is required!"
+}
+```
 
 ## 📜 Contributing
 
 1. Fork this repository.
 2. Clone your forked repo:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/hng12-stage-0.git
+   git clone https://github.com/YOUR-USERNAME/number-classification-api.git
    ```
 3. Create a new branch:
    ```bash
