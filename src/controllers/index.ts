@@ -6,11 +6,11 @@ export const classifyNumberController = async (req: Request, res: Response) => {
     const { number } = req.query;
     const num = Number(number);
 
-    if (!number) {
-        return res.status(400).json({ error: true, message: "Number is required!" });
-    }
+    // if (!number) {
+    //     return res.status(400).json({ error: true, message: "Number is required!" });
+    // }
     if (isNaN(num)) {
-        return res.status(400).json({ number, error: true });
+        return res.status(400).json({ number: "alphabet", error: true });
     }
     
     try {
