@@ -3,6 +3,10 @@
 This is a Node.js API built with TypeScript and Express for classifying numbers based on various mathematical properties.
 
 ---
+<img src="https://res.cloudinary.com/djkrhjgjd/image/upload/v1738862342/classify_number_onk8mu.png" alt="postman" />
+
+
+---
 
 ## Key Features ✨
 - Determines if a number is **prime, perfect, Armstrong, even, or odd**
