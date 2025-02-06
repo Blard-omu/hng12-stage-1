@@ -46,7 +46,7 @@ An **Armstrong number** (or narcissistic number) is a number that is equal to th
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/YOUR-USERNAME/number-classification-api.git
+git clone https://github.com/YOUR-USERNAME/hng12-stage1-classify-number.git
 cd number-classification-api
 ```
 
@@ -132,7 +132,7 @@ If an invalid number is provided, the API returns a **400 Bad Request**:
 1. Fork this repository.
 2. Clone your forked repo:
    ```bash
-   git clone https://github.com/Blard-omu/hng12-stage-1.git
+   git clone https://github.com/Blard-omu/hng12-stage1-classify-number.git
    ```
 3. Create a new branch:
    ```bash
